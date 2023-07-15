@@ -1,7 +1,8 @@
 //! Provides utility functions for generating data sequences
 
 use crate::euclid::Modulus;
-use std::f64::consts;
+use alloc::{string::String, vec, vec::Vec};
+use core::f64::consts;
 /// Generates a base 10 log spaced vector of the given length between the
 /// specified decade exponents (inclusive). Equivalent to MATLAB logspace
 ///

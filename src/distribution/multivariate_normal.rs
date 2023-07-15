@@ -2,14 +2,15 @@ use crate::distribution::Continuous;
 use crate::distribution::Normal;
 use crate::statistics::{Max, MeanN, Min, Mode, VarianceN};
 use crate::{Result, StatsError};
+use alloc::{vec, vec::Vec};
+use core::f64;
+use core::f64::consts::{E, PI};
 use nalgebra::{
     base::allocator::Allocator, base::dimension::DimName, Cholesky, DefaultAllocator, Dim, DimMin,
     LU, U1,
 };
 use nalgebra::{DMatrix, DVector};
 use rand::Rng;
-use std::f64;
-use std::f64::consts::{E, PI};
 
 /// Implements the [Multivariate Normal](https://en.wikipedia.org/wiki/Multivariate_normal_distribution)
 /// distribution using the "nalgebra" crate for matrix operations

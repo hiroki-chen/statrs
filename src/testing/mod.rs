@@ -1,9 +1,5 @@
 //! Provides testing helpers and utilities
 
-use std::fs::File;
-use std::io::{BufRead, BufReader};
-use std::str;
-
 /// Loads a test data file into a vector of `f64`'s.
 /// Path is relative to /data.
 ///
@@ -13,6 +9,10 @@ use std::str;
 /// there was an error reading the file.
 #[cfg(test)]
 pub fn load_data(path: &str) -> Vec<f64> {
+    use std::fs::File;
+    use std::io::{BufRead, BufReader};
+    use std::str;
+
     // note: the copious use of unwrap is because this is a test helper and
     // if reading the data file fails, we want to panic immediately
 

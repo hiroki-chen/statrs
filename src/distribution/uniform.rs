@@ -1,9 +1,9 @@
 use crate::distribution::{Continuous, ContinuousCDF};
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::f64;
 use rand::distributions::Uniform as RandUniform;
 use rand::Rng;
-use std::f64;
 
 /// Implements the [Continuous
 /// Uniform](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous))
@@ -37,7 +37,7 @@ impl Uniform {
     ///
     /// ```
     /// use statrs::distribution::Uniform;
-    /// use std::f64;
+    /// use core::f64;
     ///
     /// let mut result = Uniform::new(0.0, 1.0);
     /// assert!(result.is_ok());

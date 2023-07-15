@@ -3,6 +3,7 @@ use crate::function::factorial;
 use crate::statistics::*;
 use crate::{Result, StatsError};
 use ::nalgebra::{DMatrix, DVector};
+use alloc::{vec, vec::Vec};
 use rand::Rng;
 
 /// Implements the

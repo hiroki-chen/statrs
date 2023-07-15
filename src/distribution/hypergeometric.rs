@@ -2,9 +2,9 @@ use crate::distribution::{Discrete, DiscreteCDF};
 use crate::function::factorial;
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::cmp;
+use core::f64;
 use rand::Rng;
-use std::cmp;
-use std::f64;
 
 /// Implements the
 /// [Hypergeometric](http://en.wikipedia.org/wiki/Hypergeometric_distribution)
@@ -193,7 +193,7 @@ impl DiscreteCDF<u64, f64> for Hypergeometric {
         } else {
             let k = x;
             let ln_denom = factorial::ln_binomial(self.population, self.draws);
-            (k + 1 .. self.max() + 1).fold(0.0, |acc, i| {
+            (k + 1..self.max() + 1).fold(0.0, |acc, i| {
                 acc + (factorial::ln_binomial(self.successes, i)
                     + factorial::ln_binomial(self.population - self.successes, self.draws - i)
                     - ln_denom)

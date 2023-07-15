@@ -2,8 +2,8 @@ use crate::distribution::{Continuous, ContinuousCDF};
 use crate::function::gamma;
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::f64;
 use rand::Rng;
-use std::f64;
 
 /// Implements the [Inverse
 /// Gamma](https://en.wikipedia.org/wiki/Inverse-gamma_distribution)

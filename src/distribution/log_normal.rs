@@ -2,8 +2,8 @@ use crate::distribution::{Continuous, ContinuousCDF};
 use crate::function::erf;
 use crate::statistics::*;
 use crate::{consts, Result, StatsError};
+use core::f64;
 use rand::Rng;
-use std::f64;
 
 /// Implements the
 /// [Log-normal](https://en.wikipedia.org/wiki/Log-normal_distribution)
@@ -102,7 +102,7 @@ impl ContinuousCDF<f64, f64> for LogNormal {
     /// the normal cdf Φ (and internal error function) as the following property:
     /// ```ignore
     ///  Φ(-x) + Φ(x) = 1
-    ///  Φ(-x)        = 1 - Φ(x) 
+    ///  Φ(-x)        = 1 - Φ(x)
     /// ```
     fn sf(&self, x: f64) -> f64 {
         if x <= 0.0 {

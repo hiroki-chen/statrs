@@ -1,4 +1,5 @@
 use super::RankTieBreaker;
+use alloc::{vec, vec::Vec};
 
 /// The `OrderStatistics` trait provides statistical utilities
 /// having to do with ordering. All the algorithms are in-place thus requiring

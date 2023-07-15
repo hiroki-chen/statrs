@@ -2,8 +2,8 @@ use crate::distribution::{Continuous, ContinuousCDF};
 use crate::function::gamma;
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::f64;
 use rand::Rng;
-use std::f64;
 
 /// Implements the [Chi](https://en.wikipedia.org/wiki/Chi_distribution)
 /// distribution
@@ -316,7 +316,7 @@ impl Continuous<f64, f64> for Chi {
 #[rustfmt::skip]
 #[cfg(all(test, feature = "nightly"))]
 mod tests {
-    use std::f64;
+    use core::f64;
     use crate::distribution::internal::*;
     use crate::distribution::{Chi, Continuous, ContinuousCDF};
     use crate::statistics::*;

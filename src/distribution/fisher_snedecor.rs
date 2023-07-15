@@ -2,8 +2,8 @@ use crate::distribution::{Continuous, ContinuousCDF};
 use crate::function::beta;
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::f64;
 use rand::Rng;
-use std::f64;
 
 /// Implements the
 /// [Fisher-Snedecor](https://en.wikipedia.org/wiki/F-distribution) distribution
@@ -144,8 +144,8 @@ impl ContinuousCDF<f64, f64> for FisherSnedecor {
         } else {
             beta::beta_reg(
                 self.freedom_2 / 2.0,
-                self.freedom_1 / 2.0, 
-                1. - ((self.freedom_1 * x) / (self.freedom_1 * x + self.freedom_2))
+                self.freedom_1 / 2.0,
+                1. - ((self.freedom_1 * x) / (self.freedom_1 * x + self.freedom_2)),
             )
         }
     }

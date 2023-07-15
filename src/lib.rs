@@ -31,12 +31,16 @@
 #![forbid(unsafe_code)]
 #![cfg_attr(all(test, feature = "nightly"), feature(unboxed_closures))]
 #![cfg_attr(all(test, feature = "nightly"), feature(fn_traits))]
+#![feature(error_in_core)]
+#![cfg_attr(not(test), no_std)]
 
 #[macro_use]
 extern crate approx;
 
 #[macro_use]
 extern crate lazy_static;
+
+extern crate alloc;
 
 #[macro_export]
 macro_rules! assert_almost_eq {
@@ -74,4 +78,4 @@ pub use crate::error::StatsError;
 
 /// Result type for the statrs library package that returns
 /// either a result type `T` or a `StatsError`
-pub type Result<T> = std::result::Result<T, StatsError>;
+pub type Result<T> = core::result::Result<T, StatsError>;

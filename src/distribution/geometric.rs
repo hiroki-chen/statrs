@@ -1,9 +1,9 @@
 use crate::distribution::{Discrete, DiscreteCDF};
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::{f64, u64};
 use rand::distributions::OpenClosed01;
 use rand::Rng;
-use std::{f64, u64};
 
 /// Implements the
 /// [Geometric](https://en.wikipedia.org/wiki/Geometric_distribution)

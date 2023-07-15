@@ -6,7 +6,7 @@ use crate::error::StatsError;
 use crate::is_zero;
 use crate::prec;
 use crate::Result;
-use std::f64;
+use core::f64;
 
 /// Auxiliary variable when evaluating the `gamma_ln` function
 const GAMMA_R: f64 = 10.900511;

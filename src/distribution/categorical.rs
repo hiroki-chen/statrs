@@ -1,8 +1,9 @@
 use crate::distribution::{Discrete, DiscreteCDF};
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use alloc::{vec, vec::Vec};
+use core::f64;
 use rand::Rng;
-use std::f64;
 
 /// Implements the
 /// [Categorical](https://en.wikipedia.org/wiki/Categorical_distribution)
@@ -25,7 +26,7 @@ use std::f64;
 pub struct Categorical {
     norm_pmf: Vec<f64>,
     cdf: Vec<f64>,
-    sf: Vec<f64>
+    sf: Vec<f64>,
 }
 
 impl Categorical {
@@ -294,7 +295,7 @@ pub fn prob_mass_to_cdf(prob_mass: &[f64]) -> Vec<f64> {
     cdf
 }
 
-/// Computes the sf from the given cumulative densities. 
+/// Computes the sf from the given cumulative densities.
 /// Performs no parameter or bounds checking.
 pub fn cdf_to_sf(cdf: &[f64]) -> Vec<f64> {
     let max = *cdf.last().unwrap();
@@ -307,7 +308,7 @@ pub fn cdf_to_sf(cdf: &[f64]) -> Vec<f64> {
 // return 0. Otherwise val returns the index of the first element larger than
 // it within the search array.
 fn binary_index(search: &[f64], val: f64) -> usize {
-    use std::cmp;
+    use core::cmp;
 
     let mut low = 0_isize;
     let mut high = search.len() as isize - 1;

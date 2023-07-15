@@ -2,8 +2,8 @@ use crate::distribution::{self, poisson, Discrete, DiscreteCDF};
 use crate::function::{beta, gamma};
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::f64;
 use rand::Rng;
-use std::f64;
 
 /// Implements the
 /// [negative binomial](http://en.wikipedia.org/wiki/Negative_binomial_distribution)
@@ -173,7 +173,7 @@ impl Max<u64> for NegativeBinomial {
     /// u64::MAX
     /// ```
     fn max(&self) -> u64 {
-        std::u64::MAX
+        core::u64::MAX
     }
 }
 

@@ -2,9 +2,10 @@ use crate::distribution::{Continuous, ContinuousCDF, Uniform};
 use crate::statistics::*;
 use crate::{Result, StatsError};
 use ::num_traits::float::Float;
+use alloc::collections::BTreeMap;
+use alloc::{vec, vec::Vec};
 use core::cmp::Ordering;
 use rand::Rng;
-use std::collections::BTreeMap;
 
 #[derive(Clone, Debug, PartialEq)]
 struct NonNAN<T>(T);
@@ -256,8 +257,8 @@ mod tests {
         let unchanged = empirical.clone();
         empirical.add(2.0);
         empirical.remove(2.0);
-         //because of rounding errors, this doesn't hold in general
-         //due to the mean and variance being calculated in a streaming way
+        //because of rounding errors, this doesn't hold in general
+        //due to the mean and variance being calculated in a streaming way
         assert_eq!(unchanged, empirical);
     }
 }

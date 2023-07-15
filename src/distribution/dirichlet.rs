@@ -2,13 +2,14 @@ use crate::distribution::Continuous;
 use crate::function::gamma;
 use crate::statistics::*;
 use crate::{prec, Result, StatsError};
+use alloc::{vec, vec::Vec};
+use core::f64;
 use nalgebra::DMatrix;
 use nalgebra::DVector;
 use nalgebra::{
     base::allocator::Allocator, base::dimension::DimName, DefaultAllocator, Dim, DimMin, U1,
 };
 use rand::Rng;
-use std::f64;
 
 /// Implements the
 /// [Dirichlet](https://en.wikipedia.org/wiki/Dirichlet_distribution)

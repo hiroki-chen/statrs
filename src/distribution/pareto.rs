@@ -1,9 +1,9 @@
 use crate::distribution::{Continuous, ContinuousCDF};
 use crate::statistics::*;
 use crate::{Result, StatsError};
+use core::f64;
 use rand::distributions::OpenClosed01;
 use rand::Rng;
-use std::f64;
 
 /// Implements the [Pareto](https://en.wikipedia.org/wiki/Pareto_distribution)
 /// distribution

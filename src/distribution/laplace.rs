@@ -1,8 +1,8 @@
 use crate::distribution::{Continuous, ContinuousCDF};
 use crate::statistics::{Distribution, Max, Median, Min, Mode};
 use crate::{Result, StatsError};
+use core::f64;
 use rand::Rng;
-use std::f64;
 
 /// Implements the [Laplace](https://en.wikipedia.org/wiki/Laplace_distribution)
 /// distribution.
